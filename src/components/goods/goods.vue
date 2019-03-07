@@ -128,23 +128,17 @@
         this.goods.forEach((good) => {
           const {type, name, foods} = good
           let count = 0
-          foods.forEach((food) => {
+          good.foods.forEach((food) => {
             count += food.count || 0
           })
-          ret.push({
-            type,
-            name,
-            count
-          })
+          ret.push({type, name, count})
         })
         return ret
       }
     },
     methods: {
       fetch() {
-        
         if (!this.fetched) {
-          console.log(222)
           this.fetched = true
           getGoods().then((goods) => {
             this.goods = goods
