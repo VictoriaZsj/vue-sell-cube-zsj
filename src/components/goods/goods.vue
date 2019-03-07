@@ -7,6 +7,7 @@
         :options="scrollOptions"
         v-if="goods.length"
       >
+      <!-- 获取插槽上的变量 -->
         <template slot="bar" slot-scope="props">
           <cube-scroll-nav-bar
             direction="vertical"
@@ -140,7 +141,9 @@
     },
     methods: {
       fetch() {
+        
         if (!this.fetched) {
+          console.log(222)
           this.fetched = true
           getGoods().then((goods) => {
             this.goods = goods

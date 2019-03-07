@@ -57,11 +57,15 @@
       }
     },
     computed: {
+      //这里有点tab与底部内容双向绑定的感觉。因为tab组件点击选项的时候会设置selectedLabel，
+      //而为了让底部滑动的时候也同步切换头部，则要用计算属性
       selectedLabel: {
         get() {
+          console.log('999')
           return this.tabs[this.index].label
         },
         set(newValue){
+            console.log('newValue:',newValue)
             this.index=this.tabs.findIndex((value)=>{
                 return value.label===newValue
             })
@@ -79,6 +83,7 @@
     },
     methods: {
       onChange(current){
+           //访问子组件实例的方法
            this.index = current
             const instance = this.$refs.tabComponents[current]
             if (instance && instance.fetch) {
