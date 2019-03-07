@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const ERR_NO = 0
 
-export function get(url) {
+function get(url) {
     return function(params) {
         return axios.get(url, {
             params
@@ -13,4 +13,15 @@ export function get(url) {
             }
         }).catch(() => {})
     }
+}
+
+function curry(a) {
+    return function(b) {
+        return a + b;
+    }
+}
+
+export {
+    get,
+    curry
 }
