@@ -14,6 +14,7 @@
             :txts="barTxts"
             :current="props.current"
           >
+          <!-- barTxts自己构造的原因是为了以下props拿到 props.txt.type,props.txt.count-->
             <template slot-scope="props">
               <div class="text">
                 <support-ico
