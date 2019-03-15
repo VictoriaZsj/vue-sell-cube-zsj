@@ -75,7 +75,7 @@
 <script type="text/ecmascript-6">
   import moment from 'moment'
   import CartControl from 'components/cart-control/cart-control'
-//   import RatingSelect from 'components/rating-select/rating-select'
+  import RatingSelect from 'components/rating-select/rating-select'
   import Split from 'components/split/split'
   import ratingMixin from 'common/mixins/rating'
   import popupMixin from 'common/mixins/popup'
@@ -130,7 +130,7 @@
     },
     components: {
       CartControl,
-    //   RatingSelect,
+      RatingSelect,
       Split
     }
   }

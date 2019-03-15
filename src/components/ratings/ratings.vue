@@ -26,7 +26,7 @@
       </div>
       <split></split>
       <rating-select
-        @select="onSelect"
+        @select="onSelect "
         @toggle="onToggle"
         :selectType="selectType"
         :onlyContent="onlyContent"

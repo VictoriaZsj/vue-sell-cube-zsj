@@ -53,6 +53,7 @@
   export default {
     name: 'shop-cart',
     props: {
+      //有count的foods
       selectFoods: {
         type: Array,
         default() {
@@ -180,13 +181,14 @@
         }
       },
       _showShopCartList() {
+        //当作全局API调用组件。同样要传入该组件要用的props数据，以及监听该组件抛出的事件。
         this.shopCartListComp = this.shopCartListComp || this.$createShopCartList({
           $props: {
             selectFoods: 'selectFoods'
           },
           $events: {
             leave: () => {
-              this._hideShopCartSticky()
+              // this._hideShopCartSticky()
             },
             hide: () => {
               this.listFold = true
